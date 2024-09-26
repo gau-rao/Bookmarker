@@ -46,6 +46,7 @@ class BookmarkControllerTest {
 
     @BeforeEach
     void setUp() {
+        bookmarkRepository.deleteAllInBatch();
         bookmarks= new ArrayList<>();
 
 
