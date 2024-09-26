@@ -46,8 +46,8 @@ class BookmarkControllerTest {
 
     @BeforeEach
     void setUp() {
-        bookmarkRepository.deleteAllInBatch();
         bookmarks= new ArrayList<>();
+
 
         bookmarks.add(new Bookmark(null, "SivaLabs", "https://sivalabs.in", Instant.now()));
         bookmarks.add(new Bookmark(null, "SpringBlog", "https://spring.io/blog", Instant.now()));

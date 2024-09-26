@@ -1,4 +1,4 @@
-INSERT INTO bookmark (title, url, created_at) VALUES
+INSERT INTO bookmarks (title, url, created_at) VALUES
 ('How To Remove Docker Containers, Images, Volumes, and Networks', 'https://linuxize.com/post/how-to-remove-docker-images-containers-volumes-and-networks', CURRENT_TIMESTAMP()),
 ('All You Need To Know About Unit Testing with Spring Boot', 'https://reflectoring.io/unit-testing-spring-boot', CURRENT_TIMESTAMP()),
 ('Spring Boot Security Jwt Authentication', 'https://www.devglan.com/spring-security/spring-boot-jwt-auth', CURRENT_TIMESTAMP()),
@@ -10,4 +10,5 @@ INSERT INTO bookmark (title, url, created_at) VALUES
 ('How to teach Git', 'https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html', CURRENT_TIMESTAMP()),
 ('Achieving framework-independent zen with the power of interfaces and hexagonal architecture', 'https://rskupnik.github.io/framework-independence-with-hexagonal-architecture', CURRENT_TIMESTAMP()),
 ('Deserialize Immutable Objects with Jackson', 'https://www.baeldung.com/jackson-deserialize-immutable-objects', CURRENT_TIMESTAMP()),
-('SpringBoot Integration Testing using TestContainers Starter', 'https://sivalabs.in/2020/02/spring-boot-integration-testing-using-testcontainers-starter', CURRENT_TIMESTAMP());
+('SpringBoot Integration Testing using TestContainers Starter', 'https://sivalabs.in/2020/02/spring-boot-integration-testing-using-testcontainers-starter', CURRENT_TIMESTAMP())
+;
