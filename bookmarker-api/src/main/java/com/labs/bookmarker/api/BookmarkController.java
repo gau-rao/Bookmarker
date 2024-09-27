@@ -1,14 +1,13 @@
 package com.labs.bookmarker.api;
-
-import com.labs.bookmarker.domain.Bookmark;
-import com.labs.bookmarker.domain.BookmarkService;
-import com.labs.bookmarker.domain.BookmarksDTO;
+import com.labs.bookmarker.domain.BookmarkDTO;
+import com.labs.bookmarker.domain.*;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import jakarta.validation.constraints.Null;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -28,6 +27,14 @@ public class BookmarkController {
         return bookmarkService.searchBookmarks(query, page);
 
     }
+
+    @PostMapping
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public BookmarkDTO createBookmark(@RequestBody @Valid CreateBookmarkRequest request){
+        return bookmarkService.createBookmark(request);
+    }
+
+
 }
 
 

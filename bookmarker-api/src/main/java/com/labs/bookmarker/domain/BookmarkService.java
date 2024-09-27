@@ -1,4 +1,5 @@
 package com.labs.bookmarker.domain;
+import jakarta.validation.Valid;
 import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.time.Instant;
 
 @Service
 @Transactional
@@ -28,5 +31,11 @@ public class BookmarkService {
         Pageable pageable = PageRequest.of(pageNo, 10, Sort.Direction.DESC, "createdAt");
         Page<BookmarkDTO> bookmarkPage = bookmarkRepository.findByTitleContainsIgnoreCase(query,pageable);
         return new BookmarksDTO(bookmarkPage);
+    }
+
+    public BookmarkDTO createBookmark(@Valid CreateBookmarkRequest request) {
+        Bookmark bookmark = new Bookmark(null, request.getTitle(), request.getUrl(), Instant.now());
+        Bookmark savedBookmark = bookmarkRepository.save(bookmark);
+        return bookmarkMapper.toDTO(savedBookmark);
     }
 }
