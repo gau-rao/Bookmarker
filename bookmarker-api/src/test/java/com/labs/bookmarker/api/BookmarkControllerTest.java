@@ -12,6 +12,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.web.JsonPath;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
@@ -47,7 +48,7 @@ class BookmarkControllerTest {
     @BeforeEach
     void setUp() {
         bookmarkRepository.deleteAllInBatch();
-        bookmarks= new ArrayList<>();
+        bookmarks = new ArrayList<>();
 
 
         bookmarks.add(new Bookmark(null, "SivaLabs", "https://sivalabs.in", Instant.now()));
@@ -77,7 +78,7 @@ class BookmarkControllerTest {
     void shouldGetBookmarks(int pageNo, int totalElements, int totalPages, int currentPage,
                             boolean isFirst, boolean isLast,
                             boolean hasNext, boolean hasPrevious) throws Exception {
-                    mockMvc.perform(get("/api/bookmarks?page=" + pageNo))
+        mockMvc.perform(get("/api/bookmarks?page=" + pageNo))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalElements", CoreMatchers.equalTo(totalElements)))
                 .andExpect(jsonPath("$.totalPages", CoreMatchers.equalTo(totalPages)))
@@ -87,4 +88,28 @@ class BookmarkControllerTest {
                 .andExpect(jsonPath("$.hasNext", CoreMatchers.equalTo(hasNext)))
                 .andExpect(jsonPath("$.hasPrevious", CoreMatchers.equalTo(hasPrevious)));
     }
+    @Test
+    void shouldCreateBookmarkSuccessfully() throws Exception{
+        this.mockMvc.perform(
+                post("/api/bookmarks")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {
+                                "title" : "LJASON BROWNE ML",
+                                "url": "https://machinelearningmastery.com/blog/"
+                                
+                                }
+                                """)
+        )
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id" , notNullValue() ))
+                .andExpect(jsonPath("$.title" ,is("LJASON BROWNE ML" )))
+                .andExpect(jsonPath("$.url" ,is("https://machinelearningmastery.com/blog/" )));
+
+
+
+
+
+
+}
 }
