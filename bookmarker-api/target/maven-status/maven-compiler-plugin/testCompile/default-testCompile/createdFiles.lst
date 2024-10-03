@@ -1,0 +1,4 @@
+com/labs/bookmarker/TestcontainersConfiguration.class
+com/labs/bookmarker/api/BookmarkControllerTest.class
+com/labs/bookmarker/TestBookmarkerApiApplication.class
+com/labs/bookmarker/BookmarkerApiApplicationTests.class

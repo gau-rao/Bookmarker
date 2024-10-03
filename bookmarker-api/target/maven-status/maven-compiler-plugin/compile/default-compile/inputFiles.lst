@@ -1,0 +1,9 @@
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/BookmarkerApiApplication.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/api/BookmarkController.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/domain/Bookmark.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/domain/BookmarkDTO.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/domain/BookmarkMapper.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/domain/BookmarkRepository.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/domain/BookmarkService.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/domain/BookmarksDTO.java
+/home/ambu/Desktop/spring with kubernetes/bookmarker-api/src/main/java/com/labs/bookmarker/domain/CreateBookmarkRequest.java

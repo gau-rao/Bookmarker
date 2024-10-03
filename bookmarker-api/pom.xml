@@ -27,6 +27,8 @@
 		<url/>
 	</scm>
 	<properties>
+		<dockerUserName>fullgear34</dockerUserName>
+		<dockerImageName>${dockerUserName}/${project.artifactId}</dockerImageName>
 		<java.version>17</java.version>
 
 	</properties>
@@ -55,7 +57,7 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-database-postgresql</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.zalando/problem-spring-web -->
+
 		<dependency>
 			<groupId>org.zalando</groupId>
 			<artifactId>problem-spring-web</artifactId>
@@ -68,11 +70,14 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -129,12 +134,14 @@
 					<artifactId>jib-maven-plugin</artifactId>
 					<version>3.4.3</version>
 					<configuration>
+
+
 						<from>
-							<image>eclipse-temurin:17-jre-focal</image>
+							<image>eclipse-temurin:17-jre</image>
 						</from>
 						<to>
 							<image>
-								fullgear34/bookmarker-api
+								${dockerImageName}
 							</image>
 							<tags>
 								<tag>latest</tag>
@@ -142,6 +149,8 @@
 							</tags>
 						</to>
 						<container>
+							<mainClass>com.labs.bookmarker.BookmarkerApiApplication</mainClass>
+
 							<ports>
 								<port>8080</port>
 							</ports>
