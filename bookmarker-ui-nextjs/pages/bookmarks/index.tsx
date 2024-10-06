@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from 'next'
 import {fetchBookmarks} from "../../services/api";
 import {BookmarksResponse} from "../../services/models";
 import Bookmarks from "../../components/Bookmarks";
+import Pagination from "../../components/pagination"
 interface HomeProps {
     bookmarks: BookmarksResponse
     }
