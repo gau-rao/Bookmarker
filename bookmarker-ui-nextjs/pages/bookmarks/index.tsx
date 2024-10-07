@@ -2,25 +2,28 @@ import type { GetServerSideProps, NextPage } from 'next'
 import {fetchBookmarks} from "../../services/api";
 import {BookmarksResponse} from "../../services/models";
 import Bookmarks from "../../components/Bookmarks";
-import Pagination from "../../components/pagination"
+import SearchForm from "../../components/SearchForm";
 interface HomeProps {
     bookmarks: BookmarksResponse
+    query ?: string
     }
 const Home: NextPage<HomeProps> = (props) => {
   return (
     <div>
-        <Bookmarks bookmarks={props.bookmarks}/>
+        <SearchForm/>
+
+        <Bookmarks bookmarks={props.bookmarks} query={props.query}/>
     </div>
   )
 }
 
 export const getServerSideProps : GetServerSideProps = async (context)=>{
-    const {page=1} = context.query
-    const bookmarks =await fetchBookmarks(parseInt(String(page)))
+    const {page=1, query=""}= context.query
+    const bookmarks =await fetchBookmarks(parseInt(String(page)) , String(query))
     return {
-        props :{
-            bookmarks
-            }
+        props:{
+            bookmarks,
+            query           }
     }
 }
 
