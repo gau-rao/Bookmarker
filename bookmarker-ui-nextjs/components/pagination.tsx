@@ -9,7 +9,7 @@ interface PaginationProps {
 
 const Pagination: React.FC<PaginationProps> = ({bookmarks , query}) => {
     const path = "/bookmarks";
-    const queryParams= (query===undefined ||query === {}) ? {}:{query:query}
+    const queryParams= (query===undefined ||query === "1") ? {}:{query:query}
     const firstPage = {pathname: path, query:{page : 1 , ...queryParams}}
     const previousPage = {pathname: path, query: { page: bookmarks.currentPage - 1 , ...queryParams}}
     const nextPage = {pathname: path, query: { page: bookmarks.currentPage + 1, ...queryParams}}

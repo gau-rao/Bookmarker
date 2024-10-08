@@ -3,6 +3,7 @@ com/labs/bookmarker/domain/BookmarkMapper.class
 com/labs/bookmarker/BookmarkerApiApplication.class
 com/labs/bookmarker/domain/BookmarksDTO.class
 com/labs/bookmarker/domain/Bookmark.class
+com/labs/bookmarker/config/WebMvcConfig.class
 com/labs/bookmarker/api/BookmarkController.class
 com/labs/bookmarker/domain/BookmarkDTO.class
 com/labs/bookmarker/domain/CreateBookmarkRequest.class

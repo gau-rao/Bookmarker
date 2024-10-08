@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "bootstrap": "^5.2.0"
+    "bootstrap": "^5.2.0",
+    "eslint-config-next": "^14.2.4"
   }
 }

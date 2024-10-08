@@ -1,5 +1,5 @@
 import React from "react";
-import {Bookmark} from "../services/models";
+import type {Bookmark} from "../services/models";
 import Link from "next/link";
 interface BookmarkProps {
     bookmark: Bookmark
