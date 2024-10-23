@@ -1,7 +1,5 @@
 # Spring-with-Kubernetes
 
-Code for "SpringBoot + Kubernetes Tutorial" YouTube Series
-
 > **NOTE:**
 > The code in the `main` branch is not updated to use the latest versions of the dependencies.
 
