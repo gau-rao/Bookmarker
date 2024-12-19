@@ -6,8 +6,7 @@
 ## How to run?
 
 ```shell
-$ git clone https://github.com/sivaprasadreddy/springboot-kubernetes-youtube-series.git
-$ cd springboot-kubernetes-youtube-series
+
 $ ./run.sh start
 $ ./run.sh stop
 
