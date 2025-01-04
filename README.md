@@ -3,6 +3,18 @@
 > **NOTE:**
 > The code in the `main` branch is updated to use the latest versions of the dependencies.
 
+The application functionality is: 
+   * Show bookmarks (max 10 per page)
+   * Support adding a new bookmark with title and url
+   * Search / Filter bookmarks based on title of the bookmark
+   * Support basic pagination: jump to previous page, next page, first page and last page of bookmarks
+
+
+### Screenshot
+
+![](application-screenshot.gif)
+
+
 ## How to run?
 
 ```shell
