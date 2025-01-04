@@ -13,6 +13,29 @@ The application functionality is:
 ### Screenshot
 
 ![](application-screenshot.gif)
+### Technologies
+
+The code has following modules: <br/>
+
+<b>bookmarker-api</b>:
+   * [Spring-Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
+   * [Spring-Data-Jpa: makes database access and pagination easier](https://spring.io/projects/spring-data-jpa)
+   * [Flyway: for db migrations](https://documentation.red-gate.com/fd/why-database-migrations-184127574.html)
+   * [testcontainers: carry out integration testing with external services using containers ](https://java.testcontainers.org/)
+   * [jib-maven-plugin: to dockerize the spring boot app without writing dockerfile](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin)
+   * [Postgresql](https://www.postgresql.org/) 
+<br/>
+
+<b>bookmarker-ui-nextjs</b>: 
+   * [ReactJs](https://react.dev/) with [NextJs](https://nextjs.org/),
+   * [Bootstrap](https://getbootstrap.com/)
+<br/>
+
+for <em>deployment</em>: 
+   * [GitHub Actions for CI/CD - build docker images and push to dockerhub](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions): checkout [bookmarker-app/.github/worflows/build.yml](https://github.com/gau-rao/bookmarker-app/blob/master/.github/workflows/build.yml)
+   * [docker-compose (for local development)](https://docs.docker.com/compose/)
+   * [kind (for creating a local k8s cluster and deploying in it)](https://kind.sigs.k8s.io/) and
+   * [lens (for inspecting k8s cluster)](https://k8slens.dev/desktop.html)<br/>
 
 
 ## How to run?
