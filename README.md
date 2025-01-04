@@ -6,8 +6,8 @@
 ## How to run?
 
 ```shell
-$ git clone https://github.com/gau-rao/Spring-with-K.git
-$ cd Spring-with-K
+$ git clone https://github.com/gau-rao/Bookmarker.git
+$ cd Bookmarker
 $ ./run.sh start
 $ ./run.sh stop
 
@@ -25,7 +25,7 @@ $ ./run.sh stop_infra
 ## Running on Kubernetes
 
 ```shell
-$ cd Spring-with-K
+$ cd Bookmarker
 $ cd kind
 $ ./create-cluster.sh
 $ cd ../
